@@ -1,7 +1,7 @@
 `fr-nbsp`, a Pandoc Lua Filter for no-break spaces used in French typography
 ==================================================================
 
-[![GitHub build status][CI badge]][CI workflow]
+[![GitHub build status][CI badge]][CI badge]
 
 `fr-nbsp` is a [Pandoc Lua filter][Lua filter] for French documents
 that replaces spaces with no-break spaces (or narrow no-break spaces)
