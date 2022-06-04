@@ -89,6 +89,7 @@ spaces used in French typography</h1>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
+<li><a href="#usage" id="toc-usage">Usage</a></li>
 <li><a href="#license" id="toc-license">License</a></li>
 <li><a href="#Example" id="toc-Example">Example</a>
 <ul>
@@ -101,58 +102,119 @@ spaces used in French typography</h1>
 <p>[<img
 src="https://img.shields.io/github/workflow/status/RLesur/pandoc-filter-fr-nbsp/CI?logo=github"
 alt="GitHub build status" />][CI workflow]</p>
-<p><code>fr-nbsp</code> is a Pandoc Lua filter that replaces spaces with
-no-break spaces (or narrow no-break spaces when needed).</p>
+<p><code>fr-nbsp</code> is a <a
+href="https://pandoc.org/MANUAL.html#option--lua-filter">Pandoc Lua
+filter</a> for French documents that replaces spaces with no-break
+spaces (or narrow no-break spaces) when needed.</p>
+<h2 id="usage">Usage</h2>
+<ol type="1">
+<li>Download the file [./blob/main/fr-nbsp.lua]</li>
+<li>Use it with <code>pandoc -L fr-nbsp.lua</code></li>
+</ol>
 <h2 id="license">License</h2>
 <p>This pandoc Lua filter is published under the MIT license, see file
 <code>LICENSE</code> for details.</p>
 <h2 id="Example">Example</h2>
 <h3 id="input.md">input.md</h3>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Lorem ipsum</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Nullus</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>nisl, tincidunt et, mattis eget, convallis nec, purus.</span></code></pre></div>
+class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a ;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>b !</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>c ?</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>d :</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>1 %</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>2 €</span></code></pre></div>
 <h3 id="output.md">output.md</h3>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Nullus</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> Lorem ipsum</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Greetings!</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a ;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>b !</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>c ?</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>Hello from the Lua filter!</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>d :</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>tincidunt et, mattis eget, convallis nec, purus.</span></code></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>1 %</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>2 €</span></code></pre></div>
 <h2 id="Code">Code</h2>
 <p><a href="fr-nbsp.lua">fr-nbsp.lua</a></p>
 <div class="sourceCode" id="fr-nbsp.lua"><pre
-class="sourceCode lua"><code class="sourceCode lua"><span id="fr-nbsp.lua-1"><a href="#fr-nbsp.lua-1" aria-hidden="true" tabindex="-1"></a><span class="co">--- greetings.lua – turns any document into a friendly greeting</span></span>
+class="sourceCode lua"><code class="sourceCode lua"><span id="fr-nbsp.lua-1"><a href="#fr-nbsp.lua-1" aria-hidden="true" tabindex="-1"></a><span class="co">--- fr-nbsp.lua – add no-break spaces in French documents</span></span>
 <span id="fr-nbsp.lua-2"><a href="#fr-nbsp.lua-2" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="fr-nbsp.lua-3"><a href="#fr-nbsp.lua-3" aria-hidden="true" tabindex="-1"></a><span class="co">--- Copyright: © 2021–2022 Contributors</span></span>
+<span id="fr-nbsp.lua-3"><a href="#fr-nbsp.lua-3" aria-hidden="true" tabindex="-1"></a><span class="co">--- Copyright: © 2022 Romain Lesur</span></span>
 <span id="fr-nbsp.lua-4"><a href="#fr-nbsp.lua-4" aria-hidden="true" tabindex="-1"></a><span class="co">--- License: MIT – see LICENSE for details</span></span>
 <span id="fr-nbsp.lua-5"><a href="#fr-nbsp.lua-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="fr-nbsp.lua-6"><a href="#fr-nbsp.lua-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Makes sure users know if their pandoc version is too old for this</span></span>
-<span id="fr-nbsp.lua-7"><a href="#fr-nbsp.lua-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- filter.</span></span>
-<span id="fr-nbsp.lua-8"><a href="#fr-nbsp.lua-8" aria-hidden="true" tabindex="-1"></a><span class="cn">PANDOC_VERSION</span><span class="op">:</span>must_be_at_least <span class="st">&#39;2.17&#39;</span></span>
-<span id="fr-nbsp.lua-9"><a href="#fr-nbsp.lua-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="fr-nbsp.lua-10"><a href="#fr-nbsp.lua-10" aria-hidden="true" tabindex="-1"></a><span class="co">--- Amends the contents of a document with a simple greeting.</span></span>
-<span id="fr-nbsp.lua-11"><a href="#fr-nbsp.lua-11" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> function say_hello <span class="op">(</span>doc<span class="op">)</span></span>
-<span id="fr-nbsp.lua-12"><a href="#fr-nbsp.lua-12" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>meta<span class="op">.</span>subtitle <span class="op">=</span> doc<span class="op">.</span>meta<span class="op">.</span>title            <span class="co">-- demote title to subtitle</span></span>
-<span id="fr-nbsp.lua-13"><a href="#fr-nbsp.lua-13" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>meta<span class="op">.</span>title <span class="op">=</span> pandoc<span class="op">.</span>Inlines <span class="st">&#39;Greetings!&#39;</span>  <span class="co">-- set new title</span></span>
-<span id="fr-nbsp.lua-14"><a href="#fr-nbsp.lua-14" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>blocks<span class="op">:</span><span class="fu">insert</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> pandoc<span class="op">.</span>Para <span class="st">&#39;Hello from the Lua filter!&#39;</span><span class="op">)</span></span>
-<span id="fr-nbsp.lua-15"><a href="#fr-nbsp.lua-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> doc</span>
-<span id="fr-nbsp.lua-16"><a href="#fr-nbsp.lua-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="fr-nbsp.lua-17"><a href="#fr-nbsp.lua-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="fr-nbsp.lua-18"><a href="#fr-nbsp.lua-18" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="op">{</span></span>
-<span id="fr-nbsp.lua-19"><a href="#fr-nbsp.lua-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Apply the `say_hello` function to the main Pandoc document.</span></span>
-<span id="fr-nbsp.lua-20"><a href="#fr-nbsp.lua-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span> <span class="cn">P</span>andoc <span class="op">=</span> say_hello <span class="op">}</span></span>
-<span id="fr-nbsp.lua-21"><a href="#fr-nbsp.lua-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="fr-nbsp.lua-6"><a href="#fr-nbsp.lua-6" aria-hidden="true" tabindex="-1"></a><span class="cn">PANDOC_VERSION</span><span class="op">:</span>must_be_at_least <span class="st">&#39;2.9.2&#39;</span></span>
+<span id="fr-nbsp.lua-7"><a href="#fr-nbsp.lua-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-8"><a href="#fr-nbsp.lua-8" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> function add_non_breaking_spaces<span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-9"><a href="#fr-nbsp.lua-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> i <span class="op">=</span> <span class="dv">1</span></span>
+<span id="fr-nbsp.lua-10"><a href="#fr-nbsp.lua-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="fr-nbsp.lua-11"><a href="#fr-nbsp.lua-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">]</span> <span class="cf">do</span></span>
+<span id="fr-nbsp.lua-12"><a href="#fr-nbsp.lua-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> inlines<span class="op">[</span>i<span class="op">].</span>t <span class="op">==</span> <span class="st">&#39;Str&#39;</span> <span class="kw">and</span> inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">1</span><span class="op">].</span>t <span class="op">==</span> <span class="st">&#39;Space&#39;</span> <span class="kw">and</span> inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>t <span class="op">==</span> <span class="st">&#39;Str&#39;</span> <span class="cf">then</span></span>
+<span id="fr-nbsp.lua-13"><a href="#fr-nbsp.lua-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span>  <span class="st">&#39;^[;!%?%%:€]&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-14"><a href="#fr-nbsp.lua-14" aria-hidden="true" tabindex="-1"></a>            <span class="kw">or</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;%d$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^%d%d%d[^%d]*&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-15"><a href="#fr-nbsp.lua-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">or</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;°$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^%d&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-16"><a href="#fr-nbsp.lua-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">or</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;[+-]$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^%d&#39;</span><span class="op">)</span> <span class="cf">then</span></span>
+<span id="fr-nbsp.lua-17"><a href="#fr-nbsp.lua-17" aria-hidden="true" tabindex="-1"></a>                inlines<span class="op">[</span>i<span class="op">].</span>text <span class="op">=</span> inlines<span class="op">[</span>i<span class="op">].</span>text <span class="op">..</span> <span class="st">&#39;</span><span class="sc">\u{202f}</span><span class="st">&#39;</span> <span class="op">..</span> inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text</span>
+<span id="fr-nbsp.lua-18"><a href="#fr-nbsp.lua-18" aria-hidden="true" tabindex="-1"></a>                inlines<span class="op">:</span><span class="fu">remove</span><span class="op">(</span>i<span class="op">+</span><span class="dv">2</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-19"><a href="#fr-nbsp.lua-19" aria-hidden="true" tabindex="-1"></a>                inlines<span class="op">:</span><span class="fu">remove</span><span class="op">(</span>i<span class="op">+</span><span class="dv">1</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-20"><a href="#fr-nbsp.lua-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elseif</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;%d$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^ans.*$&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-21"><a href="#fr-nbsp.lua-21" aria-hidden="true" tabindex="-1"></a>            <span class="kw">or</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;%d$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^mill.*$&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-22"><a href="#fr-nbsp.lua-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">or</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;%d$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^point.*$&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-23"><a href="#fr-nbsp.lua-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">or</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;%d$&#39;</span><span class="op">)</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;^ETP.*$&#39;</span><span class="op">)</span> <span class="cf">then</span></span>
+<span id="fr-nbsp.lua-24"><a href="#fr-nbsp.lua-24" aria-hidden="true" tabindex="-1"></a>                inlines<span class="op">[</span>i<span class="op">].</span>text <span class="op">=</span> inlines<span class="op">[</span>i<span class="op">].</span>text <span class="op">..</span> <span class="st">&#39;</span><span class="sc">\u{00a0}</span><span class="st">&#39;</span> <span class="op">..</span> inlines<span class="op">[</span>i<span class="op">+</span><span class="dv">2</span><span class="op">].</span>text</span>
+<span id="fr-nbsp.lua-25"><a href="#fr-nbsp.lua-25" aria-hidden="true" tabindex="-1"></a>                inlines<span class="op">:</span><span class="fu">remove</span><span class="op">(</span>i<span class="op">+</span><span class="dv">2</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-26"><a href="#fr-nbsp.lua-26" aria-hidden="true" tabindex="-1"></a>                inlines<span class="op">:</span><span class="fu">remove</span><span class="op">(</span>i<span class="op">+</span><span class="dv">1</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-27"><a href="#fr-nbsp.lua-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span></span>
+<span id="fr-nbsp.lua-28"><a href="#fr-nbsp.lua-28" aria-hidden="true" tabindex="-1"></a>                i <span class="op">=</span> i<span class="op">+</span><span class="dv">1</span></span>
+<span id="fr-nbsp.lua-29"><a href="#fr-nbsp.lua-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">end</span></span>
+<span id="fr-nbsp.lua-30"><a href="#fr-nbsp.lua-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
+<span id="fr-nbsp.lua-31"><a href="#fr-nbsp.lua-31" aria-hidden="true" tabindex="-1"></a>            i <span class="op">=</span> i<span class="op">+</span><span class="dv">1</span></span>
+<span id="fr-nbsp.lua-32"><a href="#fr-nbsp.lua-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="fr-nbsp.lua-33"><a href="#fr-nbsp.lua-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="fr-nbsp.lua-34"><a href="#fr-nbsp.lua-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="fr-nbsp.lua-35"><a href="#fr-nbsp.lua-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> inlines</span>
+<span id="fr-nbsp.lua-36"><a href="#fr-nbsp.lua-36" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="fr-nbsp.lua-37"><a href="#fr-nbsp.lua-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-38"><a href="#fr-nbsp.lua-38" aria-hidden="true" tabindex="-1"></a><span class="co">--- For HTML output, since the Narrow No-Break Spaces (U+202F) are not well supported</span></span>
+<span id="fr-nbsp.lua-39"><a href="#fr-nbsp.lua-39" aria-hidden="true" tabindex="-1"></a><span class="co">--- by browsers (they are breakable), use this solution: https://stackoverflow.com/a/1570664</span></span>
+<span id="fr-nbsp.lua-40"><a href="#fr-nbsp.lua-40" aria-hidden="true" tabindex="-1"></a><span class="co">--- We replace nnbsp with </span><span class="ot">&amp;thinsp;</span><span class="co"> and embed them in spans with white-space:nowrap styling.</span></span>
+<span id="fr-nbsp.lua-41"><a href="#fr-nbsp.lua-41" aria-hidden="true" tabindex="-1"></a><span class="co">--- Detecting U+202F in Lua is tricky bc of its unicode support in string matching.</span></span>
+<span id="fr-nbsp.lua-42"><a href="#fr-nbsp.lua-42" aria-hidden="true" tabindex="-1"></a><span class="co">--- We must detect bytes corresponding to U+202F encoded in UTF8 (226 128 175 in decimals)</span></span>
+<span id="fr-nbsp.lua-43"><a href="#fr-nbsp.lua-43" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> function wrap_nnbsp_in_span<span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-44"><a href="#fr-nbsp.lua-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> <span class="op">#</span>inlines<span class="op">,</span> <span class="dv">1</span> <span class="cf">do</span></span>
+<span id="fr-nbsp.lua-45"><a href="#fr-nbsp.lua-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> inlines<span class="op">[</span>i<span class="op">].</span>t <span class="op">==</span> <span class="st">&#39;Str&#39;</span> <span class="kw">and</span> <span class="fu">string.match</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;</span><span class="sc">\226\128\175</span><span class="st">&#39;</span><span class="op">)</span> <span class="cf">then</span></span>
+<span id="fr-nbsp.lua-46"><a href="#fr-nbsp.lua-46" aria-hidden="true" tabindex="-1"></a>            inlines<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> pandoc<span class="op">.</span>RawInline<span class="op">(</span><span class="st">&#39;html&#39;</span><span class="op">,</span> <span class="st">&quot;&lt;span style=&#39;white-space:nowrap&#39;&gt;&quot;</span> <span class="op">..</span> <span class="fu">string.gsub</span><span class="op">(</span>inlines<span class="op">[</span>i<span class="op">].</span>text<span class="op">,</span> <span class="st">&#39;</span><span class="sc">\226\128\175</span><span class="st">&#39;</span><span class="op">,</span> <span class="st">&#39;&amp;thinsp;&#39;</span><span class="op">)</span> <span class="op">..</span> <span class="st">&#39;&lt;/span&gt;&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-47"><a href="#fr-nbsp.lua-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="fr-nbsp.lua-48"><a href="#fr-nbsp.lua-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="fr-nbsp.lua-49"><a href="#fr-nbsp.lua-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> inlines</span>
+<span id="fr-nbsp.lua-50"><a href="#fr-nbsp.lua-50" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="fr-nbsp.lua-51"><a href="#fr-nbsp.lua-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-52"><a href="#fr-nbsp.lua-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-53"><a href="#fr-nbsp.lua-53" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="cn">FORMAT</span><span class="op">:</span><span class="fu">match</span> <span class="st">&#39;html&#39;</span> <span class="kw">or</span> <span class="cn">FORMAT</span><span class="op">:</span><span class="fu">match</span> <span class="st">&#39;html5&#39;</span> <span class="cf">then</span></span>
+<span id="fr-nbsp.lua-54"><a href="#fr-nbsp.lua-54" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">{</span></span>
+<span id="fr-nbsp.lua-55"><a href="#fr-nbsp.lua-55" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="fr-nbsp.lua-56"><a href="#fr-nbsp.lua-56" aria-hidden="true" tabindex="-1"></a>            <span class="cn">I</span>nlines <span class="op">=</span> <span class="kw">function</span><span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-57"><a href="#fr-nbsp.lua-57" aria-hidden="true" tabindex="-1"></a>                inlines <span class="op">=</span> add_non_breaking_spaces<span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-58"><a href="#fr-nbsp.lua-58" aria-hidden="true" tabindex="-1"></a>                inlines <span class="op">=</span> wrap_nnbsp_in_span<span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-59"><a href="#fr-nbsp.lua-59" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> inlines</span>
+<span id="fr-nbsp.lua-60"><a href="#fr-nbsp.lua-60" aria-hidden="true" tabindex="-1"></a>            <span class="kw">end</span></span>
+<span id="fr-nbsp.lua-61"><a href="#fr-nbsp.lua-61" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="fr-nbsp.lua-62"><a href="#fr-nbsp.lua-62" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="fr-nbsp.lua-63"><a href="#fr-nbsp.lua-63" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="fr-nbsp.lua-64"><a href="#fr-nbsp.lua-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">{</span></span>
+<span id="fr-nbsp.lua-65"><a href="#fr-nbsp.lua-65" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="fr-nbsp.lua-66"><a href="#fr-nbsp.lua-66" aria-hidden="true" tabindex="-1"></a>            <span class="cn">I</span>nlines <span class="op">=</span> <span class="kw">function</span><span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-67"><a href="#fr-nbsp.lua-67" aria-hidden="true" tabindex="-1"></a>                inlines <span class="op">=</span> add_non_breaking_spaces<span class="op">(</span>inlines<span class="op">)</span></span>
+<span id="fr-nbsp.lua-68"><a href="#fr-nbsp.lua-68" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> inlines</span>
+<span id="fr-nbsp.lua-69"><a href="#fr-nbsp.lua-69" aria-hidden="true" tabindex="-1"></a>            <span class="kw">end</span></span>
+<span id="fr-nbsp.lua-70"><a href="#fr-nbsp.lua-70" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="fr-nbsp.lua-71"><a href="#fr-nbsp.lua-71" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="fr-nbsp.lua-72"><a href="#fr-nbsp.lua-72" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </body>
 </html>
