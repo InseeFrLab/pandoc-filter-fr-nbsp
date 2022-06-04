@@ -1,76 +1,9 @@
 Pandoc
-  Meta
-    { unMeta =
-        fromList
-          [ ( "author" , MetaInlines [ Str "Nullus" ] )
-          , ( "subtitle"
-            , MetaInlines [ Str "Lorem" , Space , Str "ipsum" ]
-            )
-          , ( "title" , MetaInlines [ Str "Greetings!" ] )
-          ]
-    }
-  [ Para
-      [ Str "Hello"
-      , Space
-      , Str "from"
-      , Space
-      , Str "the"
-      , Space
-      , Str "Lua"
-      , Space
-      , Str "filter!"
-      ]
-  , Para
-      [ Str "Lorem"
-      , Space
-      , Str "ipsum"
-      , Space
-      , Str "dolor"
-      , Space
-      , Str "sit"
-      , Space
-      , Str "amet,"
-      , Space
-      , Str "consectetuer"
-      , Space
-      , Str "adipiscing"
-      , Space
-      , Str "elit."
-      , Space
-      , Str "Donec"
-      , SoftBreak
-      , Str "hendrerit"
-      , Space
-      , Str "tempor"
-      , Space
-      , Str "tellus."
-      , Space
-      , Str "Donec"
-      , Space
-      , Str "pretium"
-      , Space
-      , Str "posuere"
-      , Space
-      , Str "tellus."
-      , Space
-      , Str "Proin"
-      , Space
-      , Str "quam"
-      , SoftBreak
-      , Str "nisl,"
-      , Space
-      , Str "tincidunt"
-      , Space
-      , Str "et,"
-      , Space
-      , Str "mattis"
-      , Space
-      , Str "eget,"
-      , Space
-      , Str "convallis"
-      , Space
-      , Str "nec,"
-      , Space
-      , Str "purus."
-      ]
+  Meta { unMeta = fromList [] }
+  [ Para [ Str "a\8239;" ]
+  , Para [ Str "b\8239!" ]
+  , Para [ Str "c\8239?" ]
+  , Para [ Str "d\8239:" ]
+  , Para [ Str "1\8239%" ]
+  , Para [ Str "2\8239\8364" ]
   ]

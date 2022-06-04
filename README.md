@@ -3,8 +3,8 @@
 
 [![GitHub build status][CI badge]][CI workflow]
 
-`fr-nbsp` is a Pandoc Lua filter that replaces spaces with no-break
-spaces (or narrow no-break spaces when needed).
+`fr-nbsp` is a Pandoc Lua filter for French documents that replaces
+spaces with no-break spaces (or narrow no-break spaces) when needed.
 
 [CI badge]: https://img.shields.io/github/workflow/status/RLesur/pandoc-filter-fr-nbsp/CI?logo=github
 
