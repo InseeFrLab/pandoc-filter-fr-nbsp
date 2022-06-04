@@ -35,13 +35,11 @@ local function add_non_breaking_spaces(inlines)
     return inlines
 end
 
---[[
-    For HTML output, since the Narrow No-Break Spaces (U+202F) are not well supported
-    by browsers (they are breakable), use this solution: https://stackoverflow.com/a/1570664 
-    We replace nnbsp with &thinsp; and embed them in spans with white-space:nowrap styling.
-    Detecting U+202F in Lua is tricky bc of its unicode support in string matching.
-    We must detect bytes corresponding to U+202F encoded in UTF8 (226 128 175 in decimals)
---]]
+--- For HTML output, since the Narrow No-Break Spaces (U+202F) are not well supported
+--- by browsers (they are breakable), use this solution: https://stackoverflow.com/a/1570664
+--- We replace nnbsp with &thinsp; and embed them in spans with white-space:nowrap styling.
+--- Detecting U+202F in Lua is tricky bc of its unicode support in string matching.
+--- We must detect bytes corresponding to U+202F encoded in UTF8 (226 128 175 in decimals)
 local function wrap_nnbsp_in_span(inlines)
     for i = 1, #inlines, 1 do
         if inlines[i].t == 'Str' and string.match(inlines[i].text, '\226\128\175') then
