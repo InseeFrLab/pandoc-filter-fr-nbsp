@@ -14,7 +14,7 @@ when needed.
 Usage
 ------------------------------------------------------------------
 
-1. Download the file [./blob/main/fr-nbsp.lua]
+1. Download the file [fr-nbsp.lua](./blob/main/fr-nbsp.lua)
 2. Use it with `pandoc -L fr-nbsp.lua`
 
 License
