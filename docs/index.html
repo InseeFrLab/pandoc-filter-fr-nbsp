@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Greetings, a Lua Filter Template</title>
+  <title>fr-nbsp, a Pandoc Lua Filter for no-break spaces used in French typography</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -84,56 +84,27 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Greetings, a Lua Filter Template</h1>
+<h1 class="title"><code>fr-nbsp</code>, a Pandoc Lua Filter for no-break
+spaces used in French typography</h1>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#checklist">Checklist</a></li>
-<li><a href="#license">License</a></li>
-<li><a href="#Example">Example</a>
+<li><a href="#license" id="toc-license">License</a></li>
+<li><a href="#Example" id="toc-Example">Example</a>
 <ul>
-<li><a href="#input.md">input.md</a></li>
-<li><a href="#output.md">output.md</a></li>
+<li><a href="#input.md" id="toc-input.md">input.md</a></li>
+<li><a href="#output.md" id="toc-output.md">output.md</a></li>
 </ul></li>
-<li><a href="#Code">Code</a></li>
+<li><a href="#Code" id="toc-Code">Code</a></li>
 </ul>
 </nav>
-<p><a
-href="https://github.com/tarleb/lua-filter-template/actions/workflows/ci.yaml"><img
-src="https://img.shields.io/github/workflow/status/tarleb/lua-filter-template/CI?logo=github"
-alt="GitHub build status" /></a></p>
-<p>Greetings is a friendly Lua filter that adds a welcoming message to
-the document.</p>
-<p>This repository serves as a template intended to make publishing of
-pandoc <a href="https://pandoc.org/lua-filters.html">Lua filters</a>
-easy and convenient. Just click “use this template” and then make
-modifications in your new repository. See also the GitHub documentation
-on <a
-href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">creating
-a repository from a template</a>.</p>
-<h2 id="checklist">Checklist</h2>
-<p>This is just a template, so a few things should be changed to make
-good use of this template. You can use the checklist below to ensure
-that you get the most out of it. We recommend that you perform at least
-the first two steps, everything else is up to you.</p>
-<ol type="1">
-<li><p><input type="checkbox" disabled="" />
-<strong>Rename the filter</strong>: rename the filter
-<code>greetings.lua</code> to your chosen name. It’s often a good idea
-to make the filter name match the repository name: if your repository is
-named <code>lorem</code>, then the filter should be named
-<code>lorem.lua</code>.</p></li>
-<li><p><input type="checkbox" disabled="" />
-<strong>Update the license</strong>: The template is published under the
-MIT, and we recommend to keep the same license for your code. You should
-update the LICENSE file so it has your name.</p></li>
-<li><p><input type="checkbox" disabled="" />
-<strong>Update this README</strong>: describe your filter, so people
-will know what to expect. You may also want to update the URLs above to
-match your repository.</p></li>
-</ol>
+<p>[<img
+src="https://img.shields.io/github/workflow/status/RLesur/pandoc-filter-fr-nbsp/CI?logo=github"
+alt="GitHub build status" />][CI workflow]</p>
+<p><code>fr-nbsp</code> is a Pandoc Lua filter that replaces spaces with
+no-break spaces (or narrow no-break spaces when needed).</p>
 <h2 id="license">License</h2>
-<p>This template repository is published under the MIT license, see file
+<p>This pandoc Lua filter is published under the MIT license, see file
 <code>LICENSE</code> for details.</p>
 <h2 id="Example">Example</h2>
 <h3 id="input.md">input.md</h3>
@@ -160,28 +131,28 @@ class="sourceCode markdown sample"><code class="sourceCode markdown"><span id="c
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam nisl,</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>tincidunt et, mattis eget, convallis nec, purus.</span></code></pre></div>
 <h2 id="Code">Code</h2>
-<p><a href="greetings.lua">greetings.lua</a></p>
-<div class="sourceCode" id="greetings.lua"><pre
-class="sourceCode lua"><code class="sourceCode lua"><span id="greetings.lua-1"><a href="#greetings.lua-1" aria-hidden="true" tabindex="-1"></a><span class="co">--- greetings.lua – turns any document into a friendly greeting</span></span>
-<span id="greetings.lua-2"><a href="#greetings.lua-2" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="greetings.lua-3"><a href="#greetings.lua-3" aria-hidden="true" tabindex="-1"></a><span class="co">--- Copyright: © 2021–2022 Contributors</span></span>
-<span id="greetings.lua-4"><a href="#greetings.lua-4" aria-hidden="true" tabindex="-1"></a><span class="co">--- License: MIT – see LICENSE for details</span></span>
-<span id="greetings.lua-5"><a href="#greetings.lua-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="greetings.lua-6"><a href="#greetings.lua-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Makes sure users know if their pandoc version is too old for this</span></span>
-<span id="greetings.lua-7"><a href="#greetings.lua-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- filter.</span></span>
-<span id="greetings.lua-8"><a href="#greetings.lua-8" aria-hidden="true" tabindex="-1"></a><span class="cn">PANDOC_VERSION</span><span class="op">:</span>must_be_at_least <span class="st">&#39;2.17&#39;</span></span>
-<span id="greetings.lua-9"><a href="#greetings.lua-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="greetings.lua-10"><a href="#greetings.lua-10" aria-hidden="true" tabindex="-1"></a><span class="co">--- Amends the contents of a document with a simple greeting.</span></span>
-<span id="greetings.lua-11"><a href="#greetings.lua-11" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> function say_hello <span class="op">(</span>doc<span class="op">)</span></span>
-<span id="greetings.lua-12"><a href="#greetings.lua-12" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>meta<span class="op">.</span>subtitle <span class="op">=</span> doc<span class="op">.</span>meta<span class="op">.</span>title            <span class="co">-- demote title to subtitle</span></span>
-<span id="greetings.lua-13"><a href="#greetings.lua-13" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>meta<span class="op">.</span>title <span class="op">=</span> pandoc<span class="op">.</span>Inlines <span class="st">&#39;Greetings!&#39;</span>  <span class="co">-- set new title</span></span>
-<span id="greetings.lua-14"><a href="#greetings.lua-14" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>blocks<span class="op">:</span><span class="fu">insert</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> pandoc<span class="op">.</span>Para <span class="st">&#39;Hello from the Lua filter!&#39;</span><span class="op">)</span></span>
-<span id="greetings.lua-15"><a href="#greetings.lua-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> doc</span>
-<span id="greetings.lua-16"><a href="#greetings.lua-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="greetings.lua-17"><a href="#greetings.lua-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="greetings.lua-18"><a href="#greetings.lua-18" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="op">{</span></span>
-<span id="greetings.lua-19"><a href="#greetings.lua-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Apply the `say_hello` function to the main Pandoc document.</span></span>
-<span id="greetings.lua-20"><a href="#greetings.lua-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span> <span class="cn">P</span>andoc <span class="op">=</span> say_hello <span class="op">}</span></span>
-<span id="greetings.lua-21"><a href="#greetings.lua-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><a href="fr-nbsp.lua">fr-nbsp.lua</a></p>
+<div class="sourceCode" id="fr-nbsp.lua"><pre
+class="sourceCode lua"><code class="sourceCode lua"><span id="fr-nbsp.lua-1"><a href="#fr-nbsp.lua-1" aria-hidden="true" tabindex="-1"></a><span class="co">--- greetings.lua – turns any document into a friendly greeting</span></span>
+<span id="fr-nbsp.lua-2"><a href="#fr-nbsp.lua-2" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="fr-nbsp.lua-3"><a href="#fr-nbsp.lua-3" aria-hidden="true" tabindex="-1"></a><span class="co">--- Copyright: © 2021–2022 Contributors</span></span>
+<span id="fr-nbsp.lua-4"><a href="#fr-nbsp.lua-4" aria-hidden="true" tabindex="-1"></a><span class="co">--- License: MIT – see LICENSE for details</span></span>
+<span id="fr-nbsp.lua-5"><a href="#fr-nbsp.lua-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-6"><a href="#fr-nbsp.lua-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- Makes sure users know if their pandoc version is too old for this</span></span>
+<span id="fr-nbsp.lua-7"><a href="#fr-nbsp.lua-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- filter.</span></span>
+<span id="fr-nbsp.lua-8"><a href="#fr-nbsp.lua-8" aria-hidden="true" tabindex="-1"></a><span class="cn">PANDOC_VERSION</span><span class="op">:</span>must_be_at_least <span class="st">&#39;2.17&#39;</span></span>
+<span id="fr-nbsp.lua-9"><a href="#fr-nbsp.lua-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-10"><a href="#fr-nbsp.lua-10" aria-hidden="true" tabindex="-1"></a><span class="co">--- Amends the contents of a document with a simple greeting.</span></span>
+<span id="fr-nbsp.lua-11"><a href="#fr-nbsp.lua-11" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> function say_hello <span class="op">(</span>doc<span class="op">)</span></span>
+<span id="fr-nbsp.lua-12"><a href="#fr-nbsp.lua-12" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>meta<span class="op">.</span>subtitle <span class="op">=</span> doc<span class="op">.</span>meta<span class="op">.</span>title            <span class="co">-- demote title to subtitle</span></span>
+<span id="fr-nbsp.lua-13"><a href="#fr-nbsp.lua-13" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>meta<span class="op">.</span>title <span class="op">=</span> pandoc<span class="op">.</span>Inlines <span class="st">&#39;Greetings!&#39;</span>  <span class="co">-- set new title</span></span>
+<span id="fr-nbsp.lua-14"><a href="#fr-nbsp.lua-14" aria-hidden="true" tabindex="-1"></a>  doc<span class="op">.</span>blocks<span class="op">:</span><span class="fu">insert</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> pandoc<span class="op">.</span>Para <span class="st">&#39;Hello from the Lua filter!&#39;</span><span class="op">)</span></span>
+<span id="fr-nbsp.lua-15"><a href="#fr-nbsp.lua-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> doc</span>
+<span id="fr-nbsp.lua-16"><a href="#fr-nbsp.lua-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="fr-nbsp.lua-17"><a href="#fr-nbsp.lua-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="fr-nbsp.lua-18"><a href="#fr-nbsp.lua-18" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="op">{</span></span>
+<span id="fr-nbsp.lua-19"><a href="#fr-nbsp.lua-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- Apply the `say_hello` function to the main Pandoc document.</span></span>
+<span id="fr-nbsp.lua-20"><a href="#fr-nbsp.lua-20" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span> <span class="cn">P</span>andoc <span class="op">=</span> say_hello <span class="op">}</span></span>
+<span id="fr-nbsp.lua-21"><a href="#fr-nbsp.lua-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </body>
 </html>
