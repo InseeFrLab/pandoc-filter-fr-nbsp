@@ -23,4 +23,4 @@ License
 ------------------------------------------------------------------
 
 This pandoc Lua filter is published under the MIT license, see
-file `LICENSE` for details.
+file `LICENSE` for details. 
