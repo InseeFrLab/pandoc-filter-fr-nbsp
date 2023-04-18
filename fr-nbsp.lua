@@ -10,7 +10,8 @@ local function add_non_breaking_spaces(inlines)
     
     while inlines[i+2] do
         if inlines[i].t == 'Str' and inlines[i+1].t == 'Space' and inlines[i+2].t == 'Str' then
-            if string.match(inlines[i+2].text,  '^[;!%?%%:€]')
+            if string.match(inlines[i+2].text,  '^[;!%?%%:€»]')
+            or string.match(inlines[i].text,  '[«]$')
             or string.match(inlines[i].text, '%d$') and string.match(inlines[i+2].text, '^%d%d%d[^%d]*')
             or string.match(inlines[i].text, '°$') and string.match(inlines[i+2].text, '^%d')
             or string.match(inlines[i].text, '[+-]$') and string.match(inlines[i+2].text, '^%d') then
